@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.prematch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    width: 100%;
+    
+}
+
+.ctnPersoAdversaire{
+    display: flex;
+    flex-direction: row;
+    box-sizing: content-box;
+    justify-content: space-evenly;
+    width: 100%
+}
+
+form{
+    display:flex ;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+    min-width: 90%;
+}
+
+.ctnPerso{
+    max-width: 11.25rem;
+}

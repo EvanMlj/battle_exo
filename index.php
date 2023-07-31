@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>exo battle</title>
 </head>
 
@@ -11,22 +12,32 @@
     <h1>Battle</h1>
     <div class="prematch">
         <form action="index.html" method="post">
-            <div>
-                <h2>Joueur</h2>
-                <img src="asset/quick-man.svg" alt="icone du joueur" height="150" width="150">
-                <input type="text" name="" id="">
-                <input type="text" name="" id="">
-                <input type="text" name="" id="">
-                <input type="text" name="" id="">
-            </div>
+            <div class="ctnPersoAdversaire">
+                <div class="ctnPerso" id="ctnJoueur">
+                    <h2>Joueur</h2>
+                    <img src="asset/quick-man.svg" alt="icone du joueur" height="150" width="150">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom">
+                    <label for="sante">Santé</label>
+                    <input type="number" name="sante" id="">
+                    <label for="attaque">Attaque</label>
+                    <input type="number" name="attaque" id="attaque">
+                    <label for="mana">Mana</label>
+                    <input type="number" name="mana" id="mana">
+                </div>
 
-            <div>
-                <h2>Adversaire</h2>
-                <img src="asset/cyborg-face.svg" alt="icone de l'adversaire" height="150" width="150">
-                <input type="text" name="" id="">
-                <input type="text" name="" id="">
-                <input type="text" name="" id="">
-                <input type="text" name="" id="">
+                <div class="ctnPerso" id="ctnAdversaire">
+                    <h2>Adversaire</h2>
+                    <img src="asset/cyborg-face.svg" alt="icone de l'adversaire" height="150" width="150">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom">
+                    <label for="sante">Santé</label>
+                    <input type="number" name="sante" id="">
+                    <label for="attaque">Attaque</label>
+                    <input type="number" name="attaque" id="attaque">
+                    <label for="mana">Mana</label>
+                    <input type="number" name="mana" id="mana">
+                </div>
             </div>
             <input type="submit" value="FIGHT">
         </form>
