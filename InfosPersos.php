@@ -1,50 +1,25 @@
 <?php
-
+session_start() ;
 // récupérer les informations du formulaire 
 function recupInfosPersonnages()
 {
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        $nomJoueur = $_POST["nomJoueur"];
-        $santeJoueur = $_POST["santeJoueur"];
-        $attaqueJoueur = $_POST["attaqueJoueur"];
-        $manaJoueur = $_POST["manaJoueur"];
-        //stocker les données dans un tableau
-        $donneesJoueur = array(
-            'nom' => $nomJoueur,
-            'santé' => $santeJoueur,
-            'attaque' => $attaqueJoueur,
-            'mana' => $manaJoueur
-        );
+    if (isset($_POST['joueur']) && isset($_POST['adversaire'])) {
+        $joueurInfos = $_POST['joueur'];
+        $adversaireInfos = $_POST['adversaire'];
 
-        //Pareil pour les données de l'adversaire
-        $nomAdversaire = $_POST["nomAdversaire"];
-        $santeAdversaire = $_POST["santeAdversaire"];
-        $attaqueAdversaire = $_POST["attaqueAdversaire"];
-        $manaAdversaire = $_POST["manaAdversaire"];
-        //stocker les données dans un tableau
-        $donneesAdversaire = array(
-            'nom' => $nomAdversaire,
-            'santé' => $santeAdversaire,
-            'attaque' => $attaqueAdversaire,
-            'mana' => $manaAdversaire
-        );
+        var_dump($joueurInfos);
+        var_dump($adversaireInfos);
 
-        $donneesPersos = array(
-            'joueur' => $donneesJoueur,
-            'adversaire' => $donneesAdversaire
-        );
-
-        $_SESSION['donneesPersonnages'] = $donneesPersos ;
- 
+        $_SESSION['joueur'] = $joueurInfos ;
+        $_SESSION['adversaire'] = $adversaireInfos ;
+    } else {
+        echo "Les informations des personnages n'ont pas été envoyées correctement.";
     }
+
+    
 }
 
-//exemple pour acceder aux information stocker dans la var session donneesPersonnages : 
-// 1) appelle de la fonction
-// recupInfosPersonnages();
-//         $infosPersos = $_SESSION['donneesPersonnages'];
-//         echo $infosPersos['joueur']['nom'];
 
 
 
