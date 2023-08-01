@@ -1,19 +1,7 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
 session_start();
-function recupInfosPersonnages()
-{
-    if (isset($_POST['joueur']) && isset($_POST['adversaire'])) {
-        $joueurInfos = $_POST['joueur'];
-        $adversaireInfos = $_POST['adversaire'];
-
-        $_SESSION['joueur'] = $joueurInfos;
-        $_SESSION['adversaire'] = $adversaireInfos;
-    } else {
-        echo "Les informations des personnages n'ont pas été envoyées correctement.";
-    }
-}
-$_SESSION['RecuperationInfosPersos'] = recupInfosPersonnages() ; 
-
+dump($GLOBALS);
 ?>
 
 <!DOCTYPE html>
@@ -36,16 +24,16 @@ $_SESSION['RecuperationInfosPersos'] = recupInfosPersonnages() ;
                     <img src="asset/quick-man.svg" alt="icone du joueur" height="150" width="150">
 
                     <label for="nom">Nom</label>
-                    <input type="text" name="joueur[name]" id="nom">
+                    <input type="text" name="joueur[name]" id="nom" value="<?php echo $_POST["joueur"]["name"] ?? "Héros" ?>">
 
                     <label for="sante">Santé</label>
-                    <input type="number" name="joueur[sante]" id="sante">
+                    <input type="number" name="joueur[sante]" id="sante" value="<?php echo $_POST["joueur"]["sante"] ?? "50" ?>">
 
                     <label for="attaque">Attaque</label>
-                    <input type="number" name="joueur[attaque]" id="attaque">
+                    <input type="number" name="joueur[attaque]" id="attaque" value="<?php echo $_POST["joueur"]["attaque"] ?? "25" ?>">
 
                     <label for="mana">Mana</label>
-                    <input type="number" name="joueur[mana]" id="mana">
+                    <input type="number" name="joueur[mana]" id="mana" value="<?php echo $_POST["joueur"]["mana"] ?? "100" ?>">
                 </div>
 
                 <div class="ctnPerso" id="ctnAdversaire">
@@ -53,16 +41,16 @@ $_SESSION['RecuperationInfosPersos'] = recupInfosPersonnages() ;
                     <img src="asset/cyborg-face.svg" alt="icone de l'adversaire" height="150" width="150">
 
                     <label for="nom">Nom</label>
-                    <input type="text" name="adversaire[name]" id="nom">
+                    <input type="text" name="adversaire[name]" id="nom" value="<?php echo $_POST["adversaire"]["name"] ?? "Méchant" ?>">
 
                     <label for="sante">Santé</label>
-                    <input type="number" name="adversaire[sante]" id="sante">
+                    <input type="number" name="adversaire[sante]" id="sante" value="<?php echo $_POST["adversaire"]["sante"] ?? "500" ?>">
 
                     <label for="attaque">Attaque</label>
-                    <input type="number" name="adversaire[attaque]" id="attaque">
+                    <input type="number" name="adversaire[attaque]" id="attaque" value="<?php echo $_POST["adversaire"]["attaque"] ?? "240" ?>">
 
                     <label for="mana">Mana</label>
-                    <input type="number" name="adversaire[mana]" id="mana">
+                    <input type="number" name="adversaire[mana]" id="mana" value="<?php echo $_POST["adversaire"]["mana"] ?? "50" ?>">
                 </div>
             </div>
             <input type="submit" value="FIGHT">
