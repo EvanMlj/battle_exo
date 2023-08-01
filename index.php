@@ -1,5 +1,19 @@
 <?php
 session_start();
+function recupInfosPersonnages()
+{
+    if (isset($_POST['joueur']) && isset($_POST['adversaire'])) {
+        $joueurInfos = $_POST['joueur'];
+        $adversaireInfos = $_POST['adversaire'];
+
+        $_SESSION['joueur'] = $joueurInfos;
+        $_SESSION['adversaire'] = $adversaireInfos;
+    } else {
+        echo "Les informations des personnages n'ont pas été envoyées correctement.";
+    }
+}
+$_SESSION['RecuperationInfosPersos'] = recupInfosPersonnages() ; 
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +29,7 @@ session_start();
 <body>
     <h1>Battle</h1>
     <div class="prematch">
-        <form action="InfosPersos.php" method="post">
+        <form action="fight.php" method="post">
             <div class="ctnPersoAdversaire">
                 <div class="ctnPerso" id="ctnJoueur">
                     <h2>Joueur</h2>
@@ -54,7 +68,7 @@ session_start();
             <input type="submit" value="FIGHT">
         </form>
 
-        
+
     </div>
 </body>
 
