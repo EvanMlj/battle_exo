@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
 session_start();
 require "lib.php";
 
@@ -6,11 +7,7 @@ verifFormAndStockSession() ;
 Attaque() ;
 soin() ;
 fuite() ; 
-var_dump($_SESSION['joueur']);
-echo "<br>";
-var_dump($_SESSION['adversaire']);
-echo "<br>";
-
+isAlive() ; 
 ?>
 
 

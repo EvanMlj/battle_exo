@@ -9,19 +9,23 @@ function verifFormAndStockSession()
         $_SESSION['joueur'] = $joueurInfos;
         $_SESSION['adversaire'] = $adversaireInfos;
 
-    } else {
-        echo "Les informations des personnages n'ont pas été envoyées correctement.";
-    }
+    } 
 }
 
-//  function deadOrAlive() {
-//     if ()
-//  }
+function isAlive(){
+    if($_SESSION['joueur']['sante'] == 0 || $_SESSION['adversaire']['sante'] == 0 ){
+        $isAlive = false ;
+    } else {
+        $isAlive = true ;
+    }
+    return $isAlive ;
+}
 
 function Attaque() 
 {
     if ($_SERVER["REQUEST_METHOD"]=== 'GET' && isset($_GET["attaque"])) {
         $_SESSION["adversaire"]["sante"] = max($_SESSION["adversaire"]["sante"] - $_SESSION["joueur"]["attaque"], 0 ) ; 
+        $_SESSION["joueur"]["sante"] = max($_SESSION["joueur"]["sante"] - $_SESSION["adversaire"]["attaque"], 0 ) ;
     } 
 } 
 
