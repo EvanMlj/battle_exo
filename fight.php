@@ -4,12 +4,11 @@ session_start();
 require "lib.php";
 
 verifFormAndStockSession() ;
-Attaque() ;
+Attaque();
 soin() ;
 fuite() ; 
-isAlive() ; 
+areBothAlive() ; 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

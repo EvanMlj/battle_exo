@@ -27,7 +27,7 @@ dump($GLOBALS)
                     <input type="text" name="joueur[name]" id="nom" value="<?php echo $_POST["joueur"]["name"] ?? "Héros" ?>">
 
                     <label for="sante">Santé</label>
-                    <input type="number" name="joueur[sante]" id="sante" value="<?php echo $_POST["joueur"]["sante"] ?? "50" ?>">
+                    <input type="number" name="joueur[sante]" id="sante" value="<?php echo $_POST["joueur"]["sante"] ?? "500" ?>">
 
                     <label for="attaque">Attaque</label>
                     <input type="number" name="joueur[attaque]" id="attaque" value="<?php echo $_POST["joueur"]["attaque"] ?? "25" ?>">
@@ -47,7 +47,7 @@ dump($GLOBALS)
                     <input type="number" name="adversaire[sante]" id="sante" value="<?php echo $_POST["adversaire"]["sante"] ?? "500" ?>">
 
                     <label for="attaque">Attaque</label>
-                    <input type="number" name="adversaire[attaque]" id="attaque" value="<?php echo $_POST["adversaire"]["attaque"] ?? "240" ?>">
+                    <input type="number" name="adversaire[attaque]" id="attaque" value="<?php echo $_POST["adversaire"]["attaque"] ?? "24" ?>">
 
                     <label for="mana">Mana</label>
                     <input type="number" name="adversaire[mana]" id="mana" value="<?php echo $_POST["adversaire"]["mana"] ?? "50" ?>">
